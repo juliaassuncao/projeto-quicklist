@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Inter", sans-serif;
+    background-color: #F4F5FB;
+}
+
+body {
+    margin: 32px;
+}
+
+a {
+    text-decoration: none;
+    color: #CA3884;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+a:hover {
+    cursor: pointer;
+}

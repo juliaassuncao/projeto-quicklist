@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    
+    <link rel="stylesheet" href="styles.css">
+
+    <title>quicklist</title>
+</head>
+<body>
+    <a href="#">&lt;- Voltar</a>
+    <h1>Compras da semana</h1>
+
+    <form>
+        <input type="text" placeholder="Adicione um novo item">
+        <button>Adicionar item</button>
+    </form>
+
+    <div class="list-body">
+        <div class="list-item">
+            <input type="checkbox">
+            <span>Pão de forma</span>
+            <i class="hgi hgi-stroke hgi-delete-02"></i>
+        </div>
+        <div class="list-item">
+            <input type="checkbox">
+            <span>Café preto</span>
+            <i class="hgi hgi-stroke hgi-delete-02"></i>
+        </div>
+        <div class="list-item">
+            <input type="checkbox">
+            <span>Suco de laranja</span>
+            <i class="hgi hgi-stroke hgi-delete-02"></i>
+        </div>
+        <div class="list-item">
+            <input type="checkbox">
+            <span>Bolacha</span>
+            <i class="hgi hgi-stroke hgi-delete-02"></i>
+        </div>
+    </div>
+
+    <div class="alert-remove">
+        <i class="hgi hgi-stroke hgi-alert-circle"></i>
+        <span>O item foi removido da lista</span>
+        <span>X</span>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
