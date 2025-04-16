@@ -20,37 +20,37 @@
     <h1>Compras da semana</h1>
 
     <form>
-        <input type="text" placeholder="Adicione um novo item">
+        <input type="text" id="new-item" placeholder="Adicione um novo item">
         <button>Adicionar item</button>
     </form>
 
     <div class="list-body">
         <div class="list-item">
-            <input type="checkbox">
-            <span>Pão de forma</span>
+            <input type="checkbox" id="item-1">
+            <label for="item-1" class="content-item">Pão de forma</label>
             <i class="hgi hgi-stroke hgi-delete-02"></i>
         </div>
         <div class="list-item">
-            <input type="checkbox">
-            <span>Café preto</span>
+            <input type="checkbox" id="item-2">
+            <label for="item-2" class="content-item">Café preto</label>
             <i class="hgi hgi-stroke hgi-delete-02"></i>
         </div>
         <div class="list-item">
-            <input type="checkbox">
-            <span>Suco de laranja</span>
+            <input type="checkbox" id="item-3">
+            <label for="item-3" class="content-item">Suco de laranja</label>
             <i class="hgi hgi-stroke hgi-delete-02"></i>
         </div>
         <div class="list-item">
-            <input type="checkbox">
-            <span>Bolacha</span>
+            <input type="checkbox" id="item-4">
+            <label for="item-4" class="content-item">Bolacha</label>
             <i class="hgi hgi-stroke hgi-delete-02"></i>
         </div>
     </div>
 
-    <div class="alert-remove">
-        <i class="hgi hgi-stroke hgi-alert-circle"></i>
+    <div class="remove-alert">
+        <i class="hgi hgi-stroke hgi-alert-circle" id="alert-icon"></i>
         <span>O item foi removido da lista</span>
-        <span>X</span>
+        <i class="hgi hgi-stroke hgi-cancel-01"></i>
     </div>
     
     <script src="scripts.js"></script>
