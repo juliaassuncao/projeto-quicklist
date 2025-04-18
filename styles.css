@@ -93,60 +93,65 @@ span, label, i {
 .list-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     height: 57px;
     background-color: #FFFFFF;
     border-radius: 12px;
-
     padding: 0 12px;
+  
     user-select: none;
 }
 
 .list-item input {
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-
-    opacity: 1;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    /* margin: -1px; */
 }
-
-.list-item input:checked + label::before {
-    background-color: #CA3884;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='' height='14' color='%23ffffff' fill='none'%3E%3Cpath d='M5 14L8.5 17.5L19 6.5' stroke='currentColor' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .list-item label {
+  
+.list-item label {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    flex-grow: 1;
 }
-
+  
 .list-item label::before {
     content: '';
-    width: 16px;
-    height: 16px;
-    border: 1px solid #D1D5DB;
-    border-radius: 6px; 
     display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
     margin-right: 12px;
+    background-color: #FFFFFF;
+}
+  
+.list-item input:checked + label::before {
+    background-color: #CA3884;
+    border-color: #CA3884;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='14' height='14' fill='none'%3E%3Cpath d='M5 14L8.5 17.5L19 6.5' stroke='%23ffffff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.list-item input:hover + label::before{
-    border: 1px solid #B9C2D0;
+.list-item input:not(:checked):hover + label::before {
+    border: 1px solid #6B7280;
 }
-
-.content-item {
-    flex-grow: 1;    
-    align-items: center;
-    justify-content: center;
-}
-
-.list-item i {
+  
+.list-item label {
     font-size: 16px;
+    line-height: 20px;
+    color: #374151;
 }
+  
+.list-item i {
+    font-size: 18px;
+    margin-left: 12px;
+    color: #6B7280;
+    cursor: pointer;
+}  
 
 .remove-alert {
     margin-top: 36px;
@@ -170,4 +175,8 @@ span, label, i {
 
 .remove-alert i {
     font-size: 20px;
+}
+
+#icon-close {
+    cursor: pointer;
 }
