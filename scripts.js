@@ -6,9 +6,9 @@ form.onsubmit = (event) => {
     event.preventDefault()
 
     // remove espaços em branco inúteis digitados no input (newItem)
-    const texto = newItem.value.trim()
+    const newText = newItem.value.trim()
 
-    if (texto !== "") {
+    if (newText !== "") {
         // verifica quantos ids já existem e adiciona novos itens a partir da quantidade existente
         const itemId = "item-" + (listBody.children.length + 1);
 
@@ -25,22 +25,39 @@ form.onsubmit = (event) => {
         const newLabel = document.createElement("label")
         newLabel.htmlFor = itemId
         newLabel.classList.add("content-item")
-        newLabel.textContent = texto
+        newLabel.textContent = newText
 
         // cria um novo ícone de lixeira
-        const newIcon = document.createElement("i")
+        const trashIcon = document.createElement("i")
         // precisa passar as classes separadamente usando vírgula para funcionar com o classList
-        newIcon.classList.add("hgi", "hgi-stroke", "hgi-delete-02")
+        trashIcon.classList.add("hgi", "hgi-stroke", "hgi-delete-02", "remove-item")
 
         // adiciona tudo na nova div
         newDiv.appendChild(newCheckbox)
         newDiv.appendChild(newLabel)
-        newDiv.appendChild(newIcon)
+        newDiv.appendChild(trashIcon)
 
         // adiciona a nova div à lista (list-body)
         listBody.appendChild(newDiv)
 
-        newItem.value = "";
-        newItem.focus();
+        newItem.value = ""
+        newItem.focus()
+
     }
 }
+
+// Escuta cliques na lista
+listBody.addEventListener("click", (event) => {
+    // se o elemento clicado (event.target) contém uma classe chamada "remove-item" (.classList.contains("remove-item"))
+    if (event.target.classList.contains("remove-item")) {
+        // percorre os elementos acima do ícone de lixeira na árvore DOM, buscando o primeiro elemento que tenha a classe .list-item
+        // a função closest() retorna o elemento mais próximo que possui a classe .list-item
+        const item = event.target.closest(".list-item")
+        // validação de algo foi adicionado à "item"
+        if (item) {
+            // se foi encontrado, remove o "item" (no caso o primeiro elemento acima da lixeira que tinha ".list-item")
+            item.remove()
+            console.log("Item removido!")
+        }
+    }
+})

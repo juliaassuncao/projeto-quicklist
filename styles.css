@@ -107,8 +107,7 @@ span, label, i {
     position: absolute;
     width: 1px;
     height: 1px;
-    /* margin: -1px; */
-    z-index: 2;
+    z-index: 1;
 }
   
 .list-item label {
@@ -151,6 +150,7 @@ span, label, i {
     margin-left: 12px;
     color: #6B7280;
     cursor: pointer;
+    z-index: 2;
 }  
 
 .remove-alert {
