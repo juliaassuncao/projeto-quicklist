@@ -108,18 +108,18 @@ span, label, i {
     width: 1px;
     height: 1px;
     /* margin: -1px; */
+    z-index: 2;
 }
   
 .list-item label {
     display: flex;
     align-items: center;
     cursor: pointer;
-    flex-grow: 1;
 }
   
 .list-item label::before {
     content: '';
-    display: inline-block;
+    /* display: inline-block; */
     width: 18px;
     height: 18px;
     border: 1px solid #D1D5DB;
