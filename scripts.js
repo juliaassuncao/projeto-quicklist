@@ -1,6 +1,8 @@
 const form = document.getElementById("form")
 const newItem = document.getElementById("new-item")
 const listBody = document.querySelector(".list-body")
+const removeAlert = document.querySelector(".remove-alert")
+const closeAlert = document.getElementById("close-alert")
 
 form.onsubmit = (event) => {
     event.preventDefault()
@@ -57,7 +59,16 @@ listBody.addEventListener("click", (event) => {
         if (item) {
             // se foi encontrado, remove o "item" (no caso o primeiro elemento acima da lixeira que tinha ".list-item")
             item.remove()
-            console.log("Item removido!")
+            removeAlert.classList.remove("hidden")
+
+            // Esconde automaticamente após 5 segundos (opcional)
+            setTimeout(() => {
+            removeAlert.classList.add("hidden")
+            }, 5000);
         }
     }
+})
+
+closeAlert.addEventListener('click', () => {
+    removeAlert.classList.add("hidden")
 })

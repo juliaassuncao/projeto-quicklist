@@ -84,10 +84,12 @@ span, label, i {
 }
 
 .list-body {
+    max-height: 270px;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
     gap: 12px;
+    overflow: auto;
 }
 
 .list-item {
@@ -95,7 +97,7 @@ span, label, i {
     align-items: center;
     justify-content: space-between;
 
-    height: 57px;
+    min-height: 57px;
     background-color: #FFFFFF;
     border-radius: 12px;
     padding: 0 12px;
@@ -168,6 +170,10 @@ span, label, i {
     color: #FFFFFF;
 }
 
+.hidden {
+    display: none;
+}
+
 .remove-alert span {
     margin-left: 8px;
     flex-grow: 1;
@@ -177,6 +183,6 @@ span, label, i {
     font-size: 20px;
 }
 
-#icon-close {
+#close-alert {
     cursor: pointer;
 }
